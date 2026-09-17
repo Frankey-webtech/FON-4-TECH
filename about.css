@@ -1150,3 +1150,80 @@ strong {
         animation: none !important;
     }
 }
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    background: transparent;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.navbar-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+    white-space: nowrap;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 28px;
+}
+
+.navbar-links a {
+    position: relative;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.3s ease;
+}
+
+.navbar-links a:hover,
+.navbar-links a.active {
+    color: var(--white);
+}
+
+.navbar-links a:hover::after,
+.navbar-links a.active::after {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        min-height: 65px;
+        padding: 15px 5%;
+        gap: 20px;
+    }
+
+    .navbar-links {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .navbar-links a {
+        font-size: 0.85rem;
+    }
+}
